@@ -6,7 +6,7 @@ const api = (app) => {
     app.get('/product', productController.list)
     app.get('/product/:id', productController.show)
     app.post('/product', upload.single('imageUrl'), validateProduct,  productController.create)
-    app.put('/product/:id', productController.update)
+    app.put('/product/:id',upload.single('imageUrl'), validateProduct, productController.update)
     app.delete('/product/:id', productController.destroy)
 }
 

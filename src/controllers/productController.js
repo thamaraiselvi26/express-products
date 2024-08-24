@@ -82,7 +82,7 @@ const update = async (req, res) => {
         'name': request.name,
         'price': request.price,
         'description': request.description,
-        'imageUrl': request.imageUrl
+        'imageUrl': imageUrl
     }
 
     let result = await Product.findByIdAndUpdate(req.params.id, data);
